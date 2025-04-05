@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="icon" type="image/png" href="favicon.png">
+        <meta name="description" content="Play the best HTML5 games online for free! Discover action, adventure, puzzle, and multiplayer games with no downloads required.">
+    <meta name="keywords" content="HTML5 games, online games, free games, browser games, play games online, best HTML5 games, multiplayer games">
+    <meta name="author" content="Umer Shabbir From Umer Webzone">
+  <title>Puzzles Games</title>
+    <style>
+/* Unique ID and class-based styling */
+
+
+#gaming-text {
+  font-size: 30px; /* Large text size */
+  color: #d5600e;
+  text-shadow: 2px 2px 10px rgba(255, 140, 0, 0.5);
+
+}
+
+.game-name {
+    font-family: 'Press Start 2P', cursive; /* A popular gaming font */
+    font-size: 14px; /* Adjusted for a smaller size */
+    color: #000; /* Lighter color for a more dynamic look */
+    font-weight: normal; /* Use normal weight for a clean look */
+    margin-top: 5px; /* Slightly reduced margin */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+}
+
+/* Categories Section */
+.categories-section {
+    width: 100%;
+    padding: 2px 0;
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;  /* Desktop scrolling */
+}
+
+/* Categories Container */
+.categories-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+
+/* Category Box Styling */
+.category {
+    flex: 0 0 auto;
+    min-width: 160px;
+    max-width: 200px;
+    padding: 15px 20px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Color Classes */
+.arcade { background-color: #ff6b6b; }
+.shooting { background-color: #4a90e2; }
+.racing { background-color: #f7b731; }
+.puzzles { background-color: #1dd1a1; }
+.girls { background-color: #e84393; }
+
+/* Hover Effect */
+.category:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* 📱 Mobile Responsive (2 columns) */
+@media (max-width: 768px) {
+    .categories-section {
+        overflow-x: hidden; /* Disable horizontal scroll */
+        padding: 10px 0;
+    }
+
+    .categories-container {
+        flex-wrap: wrap; /* Allow items to wrap */
+        overflow-x: hidden;
+        white-space: normal; /* Enable text wrapping */
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .category {
+        flex: 0 0 calc(50% - 10px); /* Two items per row */
+        max-width: calc(50% - 10px);
+        min-width: auto; /* Reset min-width */
+        font-size: 16px;
+        padding: 12px 15px;
+    }
+}
+
+
+
+
+
+
+
+    
+    
+    
+       * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: #ffffff;
+    color: white;
+}
+
+header {
+    background-color: white; /* Set entire header background to white */
+    padding: 1rem;
+    width: 100%;
+        position: fixed;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column; /* Layout is column to stack logo and navbar */
+    align-items: center; /* Center all content */
+}
+
+.logo {
+    height: 50px; /* Set logo height */
+    width: 200px;  /* Set logo width */
+    background: white; /* Set logo background to white */
+    padding: 1px; /* Optional: Padding around the logo */
+    margin-bottom: 1px; /* Space between logo and navbar */
+}
+
+nav {
+    width: 100%; /* Ensure nav takes the full width */
+    background-color: #ff6b00; /* Navbar background color */
+    display: flex;
+    justify-content: center; /* Center nav items */
+    padding: 10px 0; /* Padding for navbar */
+    box-sizing: border-box; /* Prevents the box model from shrinking */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center; /* Center nav items */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+nav ul li a.active, nav ul li a:hover {
+    background: #000;
+}
+
+main {
+    margin-top: 90px; /* Adjust to account for header and logo space */
+    padding: 20px;
+}
+
+.game-section {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    color: #ffa500;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    position: relative;
+}
+
+.game-card {
+    background: #eaeded;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+}
+
+.game-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.game-player {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 800px;
+    height: 70vh;
+    background: #1a1a1a;
+    border-radius: 10px;
+    display: none;
+    z-index: 1000;
+}
+
+#gameFrame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    z-index: 999;
+}
+
+.fullscreen-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1001;
+    background: #ff6b00;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
+    background: #ff6b00;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.fullscreen-btn:hover, .close-btn:hover {
+    background: #cc5500;
+}
+
+footer {
+    background: #ff6b00;
+    padding: 40px 20px 20px;
+    text-align: center;
+}
+
+footer nav ul {
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+footer nav ul li a {
+    color: white;
+}
+
+.about-puzzles-games {
+    padding: 40px 20px;
+    background: #f3f6f4;
+    margin: 20px 0;
+    border-radius: 15px;
+    color: black;
+}
+
+.more-games-btn {
+    background: #ff6b00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.more-games-btn:hover {
+    background: #cc5500;
+}
+
+.hidden-games {
+    display: none;
+}
+
+.show-more {
+    display: block !important;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    nav ul {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 5px;
+    }
+
+    .games-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .game-logo {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/">
+  <img src="logo.png" alt="Gaming Logo" class="logo">
+</a>  
+      <nav>
+            <ul>
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/privacy">Privacy</a></li>
+            </ul>
+        </nav>
+
+
+    </header>
+<br>
+    <main>
+            <section class="categories-section">
+        <div class="categories-container">
+            <a href="arcade-games" class="category arcade">Arcade Games</a>
+            <a href="shooting-games" class="category shooting">Shooting Games</a>
+            <a href="racing-games" class="category racing">Racing Games</a>
+            <a href="puzzles-games" class="category puzzles">Puzzles Games</a>
+            <a href="girls-games" class="category girls">Girls Games</a>
+        </div>
+    </section>
+ 
+
+       <h2 class="section-title">Puzzel Games</h2>
+            <div class="games-container">
+                <div class="games-grid">
+                    <!-- First 20 games -->
+
+<div class="game-card" onclick="playGame('https://html5.gamemonetize.co/t79t4nxhas0uui4nexuwgt15hnnijuw5/')">
+    <img src="https://img.gamemonetize.com/t79t4nxhas0uui4nexuwgt15hnnijuw5/512x512.jpg" class="game-logo">
+    <div class="game-name">Love Tile Trio</div>
+</div>
+
+<div class="game-card" onclick="playGame('https://html5.gamemonetize.co/yun63s7zpalrt5zo9l52j4139e3uz62r/')">
+    <img src="https://img.gamemonetize.com/yun63s7zpalrt5zo9l52j4139e3uz62r/512x512.jpg" class="game-logo">
+    <div class="game-name">Oddball Detective</div>
+</div>
+
+<div class="game-card" onclick="playGame('https://html5.gamemonetize.co/rxl1gv1fxtny8whvxbikyki148g4w178/')">
+    <img src="https://img.gamemonetize.com/rxl1gv1fxtny8whvxbikyki148g4w178/512x512.jpg" class="game-logo">
+    <div class="game-name">Rescue Dog</div>
+</div>
+
+<div class="game-card" onclick="playGame('https://html5.gamemonetize.co/ocituu1fhhsz27hgi98hxaai0b85bffn/')">
+    <img src="https://img.gamemonetize.com/ocituu1fhhsz27hgi98hxaai0b85bffn/512x512.jpg" class="game-logo">
+    <div class="game-name">Line Connect the Dots</div>
+</div>
+
+<div class="game-card" onclick="playGame('https://html5.gamemonetize.co/trq3w0z853psjkvzsboqnebh7l5gzqjv/')">
+    <img src="https://img.gamemonetize.com/trq3w0z853psjkvzsboqnebh7l5gzqjv/512x512.jpg" class="game-logo">
+    <div class="game-name">Paint Run 3D Color Puzzle</div>
+</div>
+
+<div class="game-card" onclick="playGame('https://html5.gamemonetize.co/u8ql6nl21iuoy0msb4erlap814yb8eyf/')">
+    <img src="https://img.gamemonetize.com/u8ql6nl21iuoy0msb4erlap814yb8eyf/512x512.jpg" class="game-logo">
+    <div class="game-name">Number Domination</div>
+</div>
+
+<div class="game-card" onclick="playGame('https://html5.gamemonetize.co/sgcaghenx2qmonq523wsiqcn2bd6bmkx/')">
+    <img src="https://img.gamemonetize.com/sgcaghenx2qmonq523wsiqcn2bd6bmkx/512x384.jpg" class="game-logo">
+    <div class="game-name">Ratomilton Meets Sprunki Adventure</div>
+</div>
+
+<div class="game-card" onclick="playGame('https://html5.gamemonetize.co/svfa7zesk1cgafkfbrt9spjcawy2sygv/')">
+    <img src="https://img.gamemonetize.com/svfa7zesk1cgafkfbrt9spjcawy2sygv/512x512.jpg" class="game-logo">
+    <div class="game-name">Chill Math Addition</div>
+</div>
+
+<div class="game-card" onclick="playGame('https://html5.gamemonetize.co/xgrv642rzxl6kerivavly13f29eowuz0/')">
+    <img src="https://img.gamemonetize.com/xgrv642rzxl6kerivavly13f29eowuz0/512x512.jpg" class="game-logo">
+    <div class="game-name">Falling Balls: Sand Path</div>
+</div>
+
+<div class="game-card" onclick="playGame('https://html5.gamemonetize.co/fbxmp2ui8qg220ory7nkgwo1kdq4p0bv/')">
+    <img src="https://img.gamemonetize.com/fbxmp2ui8qg220ory7nkgwo1kdq4p0bv/512x512.jpg" class="game-logo">
+    <div class="game-name">Power On</div>
+</div>
+
+<div class="game-card" onclick="playGame('https://html5.gamemonetize.co/ebwm4j8gnrf3ybi2r6n600d0jgyx7sk7/')">
+    <img src="https://img.gamemonetize.com/ebwm4j8gnrf3ybi2r6n600d0jgyx7sk7/512x512.jpg" class="game-logo">
+    <div class="game-name">Goose Match 3D</div>
+</div>
+
+<div class="game-card" onclick="playGame('https://html5.gamemonetize.co/o8szudiez7aflkkdocuvs7z8o3xeawfh/')">
+    <img src="https://img.gamemonetize.com/o8szudiez7aflkkdocuvs7z8o3xeawfh/512x512.jpg" class="game-logo">
+    <div class="game-name">Checkers for two</div>
+</div>
+
+<div class="game-card" onclick="playGame('https://html5.gamemonetize.co/98sobkv6ju367ncngzkh15vf9vvew0kv/')">
+    <img src="https://img.gamemonetize.com/98sobkv6ju367ncngzkh15vf9vvew0kv/512x512.jpg" class="game-logo">
+    <div class="game-name">Magic World: New era Match3 PRG</div>
+</div>
+
+<div class="game-card" onclick="playGame('https://html5.gamemonetize.co/javhx118b0u7az4sna7kpziuc7zxubbd/')">
+    <img src="https://img.gamemonetize.com/javhx118b0u7az4sna7kpziuc7zxubbd/512x512.jpg" class="game-logo">
+    <div class="game-name">Rescue The Boy Rope to Exit</div>
+</div>
+
+<div class="game-card" onclick="playGame('https://html5.gamemonetize.co/fq3nk1eejjhgoip4k0yuhkwq5dp49me4/')">
+    <img src="https://img.gamemonetize.com/fq3nk1eejjhgoip4k0yuhkwq5dp49me4/512x512.jpg" class="game-logo">
+    <div class="game-name">Rescue Skibd Rope Cut Puzzle</div>
+</div>
+
+<div class="game-card" onclick="playGame('https://html5.gamemonetize.co/rb7xlsqb7l0xkcvb3tfe2q5f4vtf8mmp/')">
+    <img src="https://img.gamemonetize.com/rb7xlsqb7l0xkcvb3tfe2q5f4vtf8mmp/512x512.jpg" class="game-logo">
+    <div class="game-name">Jam puzzle Collection</div>
+</div>
+
+<div class="game-card" onclick="playGame('https://html5.gamemonetize.co/583gbmjwmhkdwf8eaobhdk0104b8vd28/')">
+    <img src="https://img.gamemonetize.com/583gbmjwmhkdwf8eaobhdk0104b8vd28/512x512.jpg" class="game-logo">
+    <div class="game-name">Huggy Puzzle Wuggy Playtime</div>
+</div>
+
+<div class="game-card" onclick="playGame('https://html5.gamemonetize.co/z3l5z7xhk5hy4vycxpyf9sw9uddweel0/')">
+    <img src="https://img.gamemonetize.com/z3l5z7xhk5hy4vycxpyf9sw9uddweel0/512x512.jpg" class="game-logo">
+    <div class="game-name">Merge the Balls 2048</div>
+</div>
+
+
+                
+                
+                    <!-- Repeat 19 more times -->
+                </div>
+                <div class="hidden-games">
+                    <!-- Remaining games -->
+                </div>
+               <button class="more-games-btn" onclick="showMoreGames(this)">More Games</button>
+            </div>
+        </section>
+
+        <!-- Game sections structure example -->
+        <section class="game-section">
+          
+
+        <!-- Add similar structure for other sections -->
+
+        <section class="about-puzzles-games">
+
+    <h1>Puzzle Games</h1>
+    <br>
+    <p>
+        Puzzle games are a genre of video games that challenge players problem-solving skills, logic, and creativity. These games often involve tasks that require players to arrange pieces, solve riddles, or navigate obstacles to reach a goal. Puzzle games have been a key part of the gaming landscape, appealing to players who enjoy mental challenges and a sense of accomplishment from overcoming tricky situations.
+    </p>
+    <br>
+    <p>
+        Known for their <strong>strategic thinking</strong>, <strong>critical reasoning</strong>, and <strong>mental stimulation</strong>, puzzle games come in many forms, from classic tile-matching games like Tetris to complex escape-room-style experiences. The genre is widely appreciated for its ability to offer relaxing yet challenging gameplay that rewards patience and perseverance.
+    </p>
+    <br>
+    <p>
+        Puzzle games are available on various platforms, offering players a wide range of difficulty levels. Whether it is solving intricate puzzles in games like The Witness or enjoying the simplicity of Sudoku, puzzle games continue to captivate a diverse audience, from casual gamers to those looking for deep, engaging mental exercises.
+    </p>
+
+</section>
+
+    </main>
+<center><section>      
+  <img src="logo.png" alt="Gaming Logo" class="logo">
+</a>  
+<br>
+    <h1 id="gaming-text">Play the best HTML5 games online for free!</h1>
+  </div>
+<br>
+</section></center>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/privacy">Privacy</a></li>
+            </ul>
+        </nav>
+        <p>&copy; <span id="currentYear"></span> <span id="domainName"></span>. All rights reserved.</p>
+    </footer>
+
+    <div class="overlay" onclick="closeGame()"></div>
+    <div class="game-player">
+        <iframe id="gameFrame" src=""></iframe>
+        <button class="close-btn" onclick="closeGame()">Close</button>
+        <button class="fullscreen-btn" onclick="toggleFullScreen()">Full Screen</button>
+    </div>
+
+    <script>
+        // Game section management
+        document.querySelectorAll('.games-grid').forEach(grid => {
+            const games = grid.querySelectorAll('.game-card');
+            if(games.length > 20) {
+                const container = grid.parentElement;
+                const hiddenDiv = container.querySelector('.hidden-games');
+                games.forEach((game, index) => {
+                    if(index >= 20) {
+                        grid.removeChild(game);
+                        hiddenDiv.appendChild(game);
+                    }
+                });
+            }
+        });
+
+        function showMoreGames(btn) {
+            const container = btn.parentElement;
+            const hiddenDiv = container.querySelector('.hidden-games');
+            hiddenDiv.classList.add('show-more');
+            btn.style.display = 'none';
+        }
+
+        // Fullscreen functionality
+        function toggleFullScreen() {
+            const player = document.querySelector('.game-player');
+            if(!document.fullscreenElement) {
+                player.requestFullscreen?.();
+                document.querySelector('.fullscreen-btn').textContent = 'Exit Full Screen';
+            } else {
+                document.exitFullscreen?.();
+                document.querySelector('.fullscreen-btn').textContent = 'Full Screen';
+            }
+        }
+
+        document.addEventListener('fullscreenchange', () => {
+            if(!document.fullscreenElement) {
+                document.querySelector('.fullscreen-btn').textContent = 'Full Screen';
+            }
+        });
+
+        function playGame(url) {
+            document.querySelector('.game-player').style.display = 'block';
+            document.querySelector('.overlay').style.display = 'block';
+            document.getElementById('gameFrame').src = url;
+        }
+
+        function closeGame() {
+            if(document.fullscreenElement) document.exitFullscreen();
+            document.querySelector('.game-player').style.display = 'none';
+            document.querySelector('.overlay').style.display = 'none';
+            document.getElementById('gameFrame').src = '';
+        }
+
+        // Footer content
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.getElementById('domainName').textContent = window.location.hostname;
+
+        // Navigation active state
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                document.querySelector('nav a.active')?.classList.remove('active');
+                this.classList.add('active');
+            });
+        });
+    </script>
+    
+
+
+</body>
+</html>''
